@@ -1,0 +1,64 @@
+
+📖 Technical Documentation: CareerPulse AI
+1. Executive Summary
+CareerPulse AI is a smart application designed to streamline the job application process. It uses AI-driven logic to "compress" voluminous job descriptions into digestible insights and provides strategic resume alignment tips to help users beat Applicant Tracking Systems (ATS).
+
+2. Technical Architecture
+The project is built as a Single Page Application (SPA) using a "Low-Code" approach for high performance and minimal latency.
+
+Core Stack
+Engine: Vanilla JavaScript (ES6+).
+
+Styling: Tailwind CSS (Utility-first framework).
+
+UI Pattern: Glassmorphism / Dark Mode Dashboard.
+
+Typography: Plus Jakarta Sans (loaded via Google Fonts).
+
+Component Logic
+Component | Function | Implementation -- | -- | -- Input Controller | Captures JD and Resume strings. | document.getElementById Animation Engine | Manages loading and pulse states. | Tailwind animate-pulse Template Engine | Injects AI results into the DOM. | JS Template Literals
+3. Implementation Details
+UI/UX Design Decisions
+The Split-Screen Layout: We utilize a 5:7 grid ratio (lg:grid-cols-12). This allows users to view their inputs on the left while reading the AI-generated results on the right without scrolling.
+
+Color Theory: * Indigo ($#6366f1$): Represents the employer/Job Description.
+
+Purple ($#a855f7$): Represents the candidate/Resume.
+
+Emerald ($#10b981$): Indicates success and actionable "tips."
+
+Glassmorphism: The backdrop-filter: blur(10px) effect is used to create a "layered" UI that feels like modern desktop software rather than a flat website.
+
+Processing Logic (The "Compression" Algorithm)
+In the current version, the compression is simulated via a asynchronous event handler:
+
+Event Trigger: click event on analyzeBtn.
+
+State Management: The button is disabled to prevent multiple submissions.
+
+Data Rendering: The output area is dynamically updated using the .innerHTML property to transform raw data into formatted cards and lists.
+
+4. API Integration Strategy
+To move from a prototype to a production-ready application, the setTimeout block should be replaced with a real LLM integration (e.g., Gemini 1.5 Pro).
+
+Recommended API Flow:
+
+Request: Send a JSON payload containing the jdInput and resumeInput.
+
+Prompt Engineering: Use a system prompt to define the "Compression" constraints (e.g., "Summarize in 3 sentences, identify 5 keywords").
+
+Response Handling: Parse the JSON response and map it to the UI components.
+
+5. Maintenance and Customization
+Changing Themes: You can update the primary gradient by modifying the from-indigo-600 to-purple-600 classes in the HTML.
+
+Expanding Inputs: New fields (like Cover Letter input) can be added to the lg:col-span-5 section.
+
+Performance: All assets (Tailwind, Fonts) are loaded via CDN for maximum speed, requiring no local node_modules installation.
+
+6. Glossary
+ATS (Applicant Tracking System): Software used by employers to scan resumes for keywords.
+
+JD (Job Description): The official list of requirements for a role.
+
+Compression: The process of removing "fluff" from a JD to reveal the true hiring intent.
