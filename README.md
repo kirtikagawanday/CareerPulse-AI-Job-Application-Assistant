@@ -45,10 +45,9 @@ Logic	Vanilla JavaScript (ES6+)
 
 This is a frontend-only prototype, so setup is instant.
 
-1️⃣ Clone the Repository
-git clone https://github.com/yourusername/careerpulse-ai.git
 
-2️⃣ Run the Application
+
+Run the Application
 
 Open index.html in your browser:
 
